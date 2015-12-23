@@ -1,9 +1,8 @@
 {
-    "name": "cakephp/app",
-    "description": "CakePHP skeleton app",
-    "homepage": "http://cakephp.org",
+    "name": "mirko-pagliai/cakephp-for-mecms",
+    "description": "CakePHP skeleton app, with MeCms plugin",
+    "homepage": "https://github.com/mirko-pagliai/cakephp-for-mecms",
     "type": "project",
-    "license": "MIT",
     "require": {
         "php": ">=5.4.16",
         "cakephp/cakephp": "~3.1",
