@@ -10,7 +10,8 @@
         "mobiledetect/mobiledetectlib": "2.*",
         "cakephp/migrations": "~1.0",
         "cakephp/plugin-installer": "*",
-        "mirko-pagliai/me-cms": "*",
+        "mirko-pagliai/me-cms": "dev-test",
+        "mirko-pagliai/me-tools": "dev-develop",
         "eonasdan/bootstrap-datetimepicker": "^4.17",
         "newerton/fancy-box": "dev-master",
         "sunhater/kcfinder": "dev-master"
