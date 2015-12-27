@@ -1,26 +1,8 @@
-# CakePHP Application Skeleton
+# CakePHP Application Skeleton, with MeCms plugin
 
-[![Build Status](https://img.shields.io/travis/cakephp/app/master.svg?style=flat-square)](https://travis-ci.org/cakephp/app)
-[![License](https://img.shields.io/packagist/l/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)
+A skeleton for creating applications with [CakePHP](http://cakephp.org) and MeCms.
 
-A skeleton for creating applications with [CakePHP](http://cakephp.org) 3.x.
+The source code of CakePHP can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).  
+The source code of MeCms can be found here: [mirko-pagliai/me-cms](https://github.com/mirko-pagliai/me-cms).
 
-The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
-
-## Installation
-
-1. Download [Composer](http://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/app [app_name]`.
-
-If Composer is installed globally, run
-```bash
-composer create-project --prefer-dist cakephp/app [app_name]
-```
-
-You should now be able to visit the path to where you installed the app and see
-the setup traffic lights.
-
-## Configuration
-
-Read and edit `config/app.php` and setup the 'Datasources' and any other
-configuration relevant for your application.
+For installation, refer to the guide [Installation: the easy way](https://github.com/mirko-pagliai/me-cms/wiki/Installation:-the-easy-way).
