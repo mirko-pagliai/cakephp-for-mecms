@@ -203,3 +203,8 @@ DispatcherFactory::add('ControllerFactory');
  */
 Type::build('date')->useLocaleParser();
 Type::build('datetime')->useLocaleParser();
+
+/**
+ * Uses the ErrorHandler provided by MeTools
+ */
+(new \MeTools\Error\ErrorHandler(Configure::read('Error')))->register();
