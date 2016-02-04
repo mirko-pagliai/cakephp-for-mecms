@@ -10,9 +10,6 @@
 			//Instead of `$this->Html->title()`
 			echo $this->Html->tag('title', $this->fetch('title'));
 			
-			if(is_readable(WWW_ROOT.'favicon.ico'))
-				echo $this->Html->meta('icon');
-			
 			echo $this->fetch('meta');
 			
 			echo $this->Html->css([
