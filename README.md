@@ -8,4 +8,5 @@ The source code of MeCms can be found here: [mirko-pagliai/me-cms](https://githu
 For installation, refer to the guide [Installation: the easy way](https://github.com/mirko-pagliai/me-cms/wiki/Installation:-the-easy-way).
 
 Plugins for MeCms:
+- [MeInstagram](https://github.com/mirko-pagliai/me-instagram);
 - [MeYoutube](https://github.com/mirko-pagliai/me-youtube).
