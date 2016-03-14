@@ -283,14 +283,14 @@ return [
      */
     'Log' => [
         'debug' => [
-            'className' => 'Cake\Log\Engine\FileLog',
+            'className' => 'MeCms\Log\Engine\SerializedLog',
             'path' => LOGS,
             'file' => 'debug',
             'levels' => ['notice', 'info', 'debug'],
             'url' => env('LOG_DEBUG_URL', null),
         ],
         'error' => [
-            'className' => 'Cake\Log\Engine\FileLog',
+            'className' => 'MeCms\Log\Engine\SerializedLog',
             'path' => LOGS,
             'file' => 'error',
             'levels' => ['warning', 'error', 'critical', 'alert', 'emergency'],
