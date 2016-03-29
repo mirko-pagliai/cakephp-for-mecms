@@ -222,8 +222,3 @@ Type::build('date')
 Type::build('datetime')
     ->useImmutable()
     ->useLocaleParser();
-
-/**
- * Uses the ErrorHandler provided by MeTools
- */
-(new \MeTools\Error\ErrorHandler(Configure::read('Error')))->register();
