@@ -338,5 +338,6 @@ return [
      */
     'Session' => [
         'defaults' => 'php',
+        'timeout' => 60*24, //By default, the session expires after 24 hours
     ],
 ];
