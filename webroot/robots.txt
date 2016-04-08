@@ -1,6 +1,9 @@
 User-agent: *
-			Disallow: /admin/
-			Disallow: /ckeditor/
-			Disallow: /css/
-			Disallow: /js/
-			Disallow: /vendor/
+	Disallow: /admin/
+	Disallow: /assets/
+	Disallow: /banner/
+	Disallow: /ckeditor/
+	Disallow: /css/
+	Disallow: /files/
+	Disallow: /js/
+	Disallow: /vendor/
