@@ -2,11 +2,13 @@
 return ['MeCms' => [
 	//Backend
 	'backend' => [
+		//Layout you want to use for the backend
+		//If you want to use a layout from your application (eg. `default.ctp`), change this value without extension
 		'layout' => 'MeCms.backend',
 		//Number of photos to show per page. This must be a multiple of 4
 		'photos' => 12,
 		//Number of records to show per page
-		'records' => 10
+		'records' => 10,
 	 ],
 	//Email
 	'email' => [
@@ -14,17 +16,21 @@ return ['MeCms' => [
 		'config' => 'default',
 		//Address used as the sender for emails sent to users and as a 
 		//recipient for the email sent by users
-		'webmaster' => 'email@example.com'
+		'webmaster' => 'email@example.com',
 	],
 	//Frontend
 	'frontend' => [
 		//Google Analytics ID or FALSE
 		'analytics' => FALSE,
-		//Layout you want to use for the backend
+		//It shows the alert for the cookie policy
+		'cookies_policy' => TRUE,
+		//Layout you want to use for the frontend
 		//If you want to use a layout from your application (eg. `default.ctp`), change this value without extension
 		'layout' => 'MeCms.frontend',
 		//Contact form (enabled or disabled).
 		'contact_form' => TRUE,
+		//Facebook app ID or FALSE
+		'facebook_app_id' => FALSE,
 		//Fancybox for photos
 		'fancybox' => TRUE,
 		//Site logo. Relative path to `APP/webroot/img/`
@@ -43,8 +49,12 @@ return ['MeCms' => [
 		'rss_meta' => TRUE,
 		//Theme. Must be located in `APP/plugins/`
 		'theme' => FALSE,
+		//For some mobile browsers you can choose a color for the browser bar. Must be a valid HEX color or FALSE to disable
+		//See https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
+		'toolbar_color' => FALSE,
 		//Number of characters to truncate a text. `0` or `FALSE` to disable
-		'truncate_to' => 1000
+		//Note that you can use the "<!-- read-more -->" tag to indicate manually where to truncate a text
+		'truncate_to' => 1000,
 	],
 	//KCFinder
 	'kcfinder' => [
@@ -59,7 +69,7 @@ return ['MeCms' => [
 			//Long format
 			'long'	=> 'YYYY/MM/dd',
 			//Short format
-			'short'	=> 'yy/MM/dd'
+			'short'	=> 'yy/MM/dd',
 		],
 		//Datetime formats
 		//See; http://php.net/manual/it/datetime.formats.php
@@ -67,26 +77,25 @@ return ['MeCms' => [
 			//Long format
 			'long'	=> 'YYYY/MM/dd, HH:mm',
 			//Short format
-			'short'	=> 'yy/MM/dd, HH:mm'
+			'short'	=> 'yy/MM/dd, HH:mm',
 		],
 		//Forces debug on localhost (enabled or disabled)
 		'debug_on_localhost' => TRUE,
 		//Interface language.
 		//With "auto" value, it will try to use the browser language
 		'language' => 'auto',
+        //Sitemap expiration. Must be a valid strtotime string
+        'sitemap_expiration' => '+24 hours',
 		//Time formats
 		//See; http://php.net/manual/it/datetime.formats.php
 		'time' => [
 			//Long format
 			'long'	=> 'HH:mm',
 			//Short format
-			'short'	=> 'HH:mm'
+			'short'	=> 'HH:mm',
 		],
-		//Timezone. See the list of supported timezones:
-		//http://php.net/manual/en/timezones.php
-		'timezone' => 'UTC',
 		//Site title
-		'title' => 'MeCms'
+		'title' => 'MeCms',
 	],
 	//Pages
 	'page' => [
@@ -94,7 +103,7 @@ return ['MeCms' => [
 		'created' => FALSE,
 		//Displays the Shareaholic social buttons
 		//Remember you have to set app and site IDs. See `shareaholic.app_id` and `shareaholic.site_id`
-		'shareaholic' => FALSE	
+		'shareaholic' => FALSE,
 	],
 	//Posts
 	'post' => [
@@ -104,31 +113,33 @@ return ['MeCms' => [
 		'category' => TRUE,
 		//Displays the post created datetime
 		'created' => TRUE,
+		//Adds post tags as keywords meta-tag
+		'keywords' => TRUE,
 		//Related posts
 		'related' => [
 			//Limit of related posts to get for each post. Use `0` to disable.
 			//If you use images, it recommended a multiple of 4 
 			'limit' => 4,
 			//Gets only related posts with images
-			'images' => TRUE
+			'images' => TRUE,
 		],
 		//Displays the Shareaholic social buttons
 		//Remember you have to set app and site IDs. See `shareaholic.app_id` and `shareaholic.site_id`
 		'shareaholic' => FALSE,
 		//Displays the post tags
-		'tags' => TRUE
+		'tags' => TRUE,
 	],
 	//Security
 	'security' => [
-		//Array of banned IP addresses.
-		//You can use the asterisk (*) as a wildcard.
-		//With "false" or an empty value, access is granted to any ip addresses (no limitation).
-		'banned_ip' => [],
+		//Link for "IP map". The `{IP}` string will be replaced with the IP address
+		'ip_map' => 'http://www.traceip.net/?query={IP}',
+		//Link for "IP who is". The `{IP}` string will be replaced with the IP address
+		'ip_whois' => 'http://www.traceip.net/whois/{IP}',
 		//reCAPTCHA (enabled or disabled).
 		//It will be used for some actions, such as signup or reset the password
 		'recaptcha' => FALSE,
 		//Interval between searches, in seconds. Set to `0` or `FALSE` to disable
-		'search_interval' => 10
+		'search_interval' => 10,
 	],
 	//Shareaholic
 	'shareaholic' => [
@@ -137,7 +148,7 @@ return ['MeCms' => [
 		'app_id' => '',
 		//Site ID. Used for render the "setup code" of Shareaholic.
 		//You can found it on the "Site Tools Dashboard"
-		'site_id' => ''
+		'site_id' => '',
 	],
 	//Users
 	'users' => [
@@ -153,6 +164,6 @@ return ['MeCms' => [
 		//Reset password (enabled or disabled)
 		'reset_password' => TRUE,
 		//Signup (enabled or disabled)
-		'signup' => TRUE
+		'signup' => TRUE,
 	]
 ]];
