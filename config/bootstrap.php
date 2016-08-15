@@ -34,9 +34,6 @@ if (!extension_loaded('mbstring')) {
  */
 require __DIR__ . '/paths.php';
 
-// Use composer to load the autoloader.
-require ROOT . DS . 'vendor' . DS . 'autoload.php';
-
 /**
  * Bootstrap CakePHP.
  *
@@ -170,6 +167,21 @@ Request::addDetector('tablet', function ($request) {
 });
 
 /**
+ * Enable immutable time objects in the ORM.
+ *
+ * You can enable default locale format parsing by adding calls
+ * to `useLocaleParser()`. This enables the automatic conversion of
+ * locale specific date formats. For details see
+ * @link http://book.cakephp.org/3.0/en/core-libraries/internationalization-and-localization.html#parsing-localized-datetime-data
+ */
+Type::build('time')
+    ->useImmutable();
+Type::build('date')
+    ->useImmutable();
+Type::build('datetime')
+    ->useImmutable();
+
+/**
  * Custom Inflector rules, can be set to correctly pluralize or singularize
  * table, model, controller names or whatever other string is passed to the
  * inflection functions.
@@ -189,35 +201,11 @@ Request::addDetector('tablet', function ($request) {
  * Plugin::load('Migrations'); //Loads a single plugin named Migrations
  *
  */
-
-Plugin::load('Migrations');
-
 // Only try to load DebugKit in development mode
 // Debug Kit should not be installed on a production system
 if (Configure::read('debug')) {
-    Plugin::load('DebugKit', ['bootstrap' => true]);
+    Plugin::load('DebugKit', ['bootstrap' => TRUE]);
 }
 
+Plugin::load('Migrations');
 Plugin::load('MeCms', ['bootstrap' => TRUE, 'routes' => TRUE]);
-
-/**
- * Connect middleware/dispatcher filters.
- */
-DispatcherFactory::add('Asset');
-DispatcherFactory::add('Routing');
-DispatcherFactory::add('ControllerFactory');
-
-/**
- * Enable immutable time objects in the ORM.
- *
- * You can enable default locale format parsing by adding calls
- * to `useLocaleParser()`. This enables the automatic conversion of
- * locale specific date formats. For details see
- * @link http://book.cakephp.org/3.0/en/core-libraries/internationalization-and-localization.html#parsing-localized-datetime-data
- */
-Type::build('time')
-    ->useImmutable();
-Type::build('date')
-    ->useImmutable();
-Type::build('datetime')
-    ->useImmutable();
