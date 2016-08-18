@@ -17,7 +17,7 @@
 				'MeCms.login/bootstrap.min',
 				'MeTools.default',
 				'MeCms.login/layout'
-			], ['block' => TRUE]);
+			], ['block' => true]);
 			echo $this->fetch('css');
 			
 			echo $this->fetch('script');

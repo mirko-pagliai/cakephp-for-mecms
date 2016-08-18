@@ -9,22 +9,22 @@ return ['MeCms' => [
 	 ],
 	//Default layout
 	'default' => [
-		//Google Analytics ID or `FALSE` to disable
-		'analytics' => FALSE,
+		//Google Analytics ID or `false` to disable
+		'analytics' => false,
 		//Displays the alert for the cookie policy
-		'cookies_policy' => TRUE,
+		'cookies_policy' => true,
 		//Contact form (enabled or disabled)
-		'contact_form' => TRUE,
-		//Facebook app ID or `FALSE`
-		'facebook_app_id' => FALSE,
+		'contact_form' => true,
+		//Facebook app ID or `false`
+		'facebook_app_id' => false,
 		//Uses Fancybox for photos
-		'fancybox' => TRUE,
+		'fancybox' => true,
 		//Site logo. Relative path to `APP/webroot/img/`
 		'logo' => 'logo.png',
 		//Site offline (enabled or disabled)
-		'offline' => FALSE,
-		//Text to display when the site is offline or `FALSE`
-		'offline_text' => FALSE,
+		'offline' => false,
+		//Text to display when the site is offline or `false`
+		'offline_text' => false,
 		//Number of records to show per page
 		'records' => 10,
 		//Number of records to show on RSS
@@ -32,14 +32,14 @@ return ['MeCms' => [
 		//Number of records to show for searches
 		'records_for_searches' => 20,
 		//Adds automatically the meta tag for RSS resources
-		'rss_meta' => TRUE,
+		'rss_meta' => true,
 		//Theme. Must be located into `APP/plugins/`
-		'theme' => FALSE,
+		'theme' => false,
 		//For some mobile browsers you can choose a color for the browser bar.
-        //Must be a valid HEX color or `FALSE to disable`.
+        //Must be a valid HEX color or `false` to disable.
 		//See https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
-		'toolbar_color' => FALSE,
-		//Number of characters to truncate a text. `0` or `FALSE` to disable.
+		'toolbar_color' => false,
+		//Number of characters to truncate a text. `0` or `false` to disable.
 		//Note that you can use the "<!-- read-more -->" tag to indicate 
         //  manually where to truncate a text
 		'truncate_to' => 1000,
@@ -76,7 +76,7 @@ return ['MeCms' => [
 			'short'	=> 'yy/MM/dd, HH:mm',
 		],
 		//Forces debug on localhost (enabled or disabled)
-		'debug_on_localhost' => TRUE,
+		'debug_on_localhost' => true,
         //Sitemap expiration. Must be a valid strtotime string
         'sitemap_expiration' => '+24 hours',
 		//Time formats
@@ -93,38 +93,38 @@ return ['MeCms' => [
 	//Pages
 	'page' => [
 		//Displays the page category
-		'category' => TRUE,
+		'category' => true,
 		//Displays the page created datetime
-		'created' => FALSE,
+		'created' => false,
 		//Displays the Shareaholic social buttons.
 		//Remember you have to set app and site IDs. See `shareaholic.app_id` 
         //  and `shareaholic.site_id`
-		'shareaholic' => FALSE,
+		'shareaholic' => false,
 	],
 	//Posts
 	'post' => [
 		//Displays the post author
-		'author' => TRUE,
+		'author' => true,
 		//Displays the post category
-		'category' => TRUE,
+		'category' => true,
 		//Displays the post created datetime
-		'created' => TRUE,
+		'created' => true,
 		//Adds post tags as keywords meta-tag
-		'keywords' => TRUE,
-		//Related posts. `FALSE` to disable
+		'keywords' => true,
+		//Related posts. `false` to disable
 		'related' => [
 			//Limit of related posts to get for each post.
 			//If you use images, it recommended a multiple of 4 
 			'limit' => 4,
 			//Gets only related posts with images
-			'images' => TRUE,
+			'images' => true,
 		],
 		//Displays the Shareaholic social buttons
 		//Remember you have to set app and site IDs. See `shareaholic.app_id` 
         //  and `shareaholic.site_id`
-		'shareaholic' => FALSE,
+		'shareaholic' => false,
 		//Displays the post tags
-		'tags' => TRUE,
+		'tags' => true,
 	],
 	//Security
 	'security' => [
@@ -134,8 +134,8 @@ return ['MeCms' => [
 		'ip_whois' => 'http://www.ip-adress.com/whois/{IP}',
 		//reCAPTCHA (enabled or disabled).
 		//It will be used for some actions, such as signup or password reset
-		'recaptcha' => FALSE,
-		//Interval between searches, in seconds. `0` or `FALSE` to disable
+		'recaptcha' => false,
+		//Interval between searches, in seconds. `0` or `false` to disable
 		'search_interval' => 10,
 	],
 	//Shareaholic
@@ -155,14 +155,14 @@ return ['MeCms' => [
 		//	`2`	- The account will be enabled by an administrator.
 		'activation' => 1,
 		//Login with cookies ("remember me" function)
-		'cookies_login' => TRUE,
+		'cookies_login' => true,
 		//Default users group (ID)
 		'default_group' => 3,
 		//Reset password (enabled or disabled)
-		'reset_password' => TRUE,
+		'reset_password' => true,
         //Displays the userbar
-        'userbar' => TRUE,
+        'userbar' => true,
 		//Signup (enabled or disabled)
-		'signup' => TRUE,
+		'signup' => true,
 	],
 ]];

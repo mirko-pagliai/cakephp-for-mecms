@@ -15,7 +15,7 @@ return ['Widgets' => [
 			'limit' => 10,
 			'prefix' => '#',
             'render' => 'cloud',
-			'shuffle' => TRUE,
+			'shuffle' => true,
 			'style' => ['maxFont' => 40, 'minFont' => 12]
 		],
 	],
