@@ -28,7 +28,7 @@
 			<?php
 				//Checks if the logo image exists
                 $logo = \Cake\Core\Configure::read('MeCms.default.logo');
-				if(is_readable(WWW_ROOT.'img'.DS.$logo)) {
+				if (is_readable(WWW_ROOT . 'img' . DS . $logo)) {
 					echo $this->Html->image($logo, ['id' => 'logo']);
                 }
                 
