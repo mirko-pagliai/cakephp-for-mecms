@@ -291,6 +291,7 @@ return [
             'path' => LOGS,
             'file' => 'debug',
             'levels' => ['notice', 'info', 'debug'],
+            'mask' => 0777,
             'url' => env('LOG_DEBUG_URL', null),
         ],
         'error' => [
@@ -298,6 +299,7 @@ return [
             'path' => LOGS,
             'file' => 'error',
             'levels' => ['warning', 'error', 'critical', 'alert', 'emergency'],
+            'mask' => 0777,
             'url' => env('LOG_ERROR_URL', null),
         ],
     ],
