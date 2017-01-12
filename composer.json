@@ -31,10 +31,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "src"
-        },
-        "files": [
-            "vendor/mirko-pagliai/me-tools/vendor/Recaptcha/recaptchalib.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
