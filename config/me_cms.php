@@ -14,7 +14,7 @@ return [ME_CMS => [
         //Displays the alert for the cookie policy
         'cookies_policy' => true,
         //Contact form (enabled or disabled)
-        'contact_form' => true,
+        'contact_us' => true,
         //Facebook app ID or `false`
         'facebook_app_id' => false,
         //Uses Fancybox for photos
