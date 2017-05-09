@@ -152,7 +152,12 @@ return [
     'Error' => [
         'errorLevel' => E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED,
         'exceptionRenderer' => 'Cake\Error\ExceptionRenderer',
-        'skipLog' => [],
+        'skipLog' => [
+            'Assets\Network\Exception\AssetNotFoundException',
+            'Cake\Datasource\Exception\RecordNotFoundException',
+            'Cake\Routing\Exception\MissingControllerException',
+            'Thumber\Network\Exception\ThumbNotFoundException',
+        ],
         'log' => true,
         'trace' => true,
     ],
@@ -256,7 +261,7 @@ return [
              * which is the recommended value in production environments
              */
             //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
-            
+
             'url' => env('DATABASE_URL', null),
         ],
 
