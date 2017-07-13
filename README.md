@@ -4,6 +4,7 @@ A skeleton for creating applications with [CakePHP](http://cakephp.org) and MeCm
 
 The source code of CakePHP can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).  
 The source code of MeCms can be found here: [mirko-pagliai/me-cms](https://github.com/mirko-pagliai/me-cms).
+A skeleton for creating applications with [CakePHP](https://cakephp.org) 3.x.
 
 For installation, refer to [Installation: the easy way](https://github.com/mirko-pagliai/me-cms/wiki/Installation:-the-easy-way)
 or [Installation: the hard way](https://github.com/mirko-pagliai/me-cms/wiki/Installation:-the-hard-way).
