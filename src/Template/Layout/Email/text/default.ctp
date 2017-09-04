@@ -1,2 +1,2 @@
 <?php
-$this->fetch('content');
+echo $this->fetch('content');
