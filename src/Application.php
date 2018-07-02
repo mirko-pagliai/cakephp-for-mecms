@@ -4,6 +4,7 @@ namespace App;
 use Cake\Core\Configure;
 use Cake\Error\Middleware\ErrorHandlerMiddleware;
 use Cake\Http\BaseApplication;
+use Cake\Http\Middleware\CsrfProtectionMiddleware;
 use Cake\Routing\Middleware\AssetMiddleware;
 use Cake\Routing\Middleware\RoutingMiddleware;
 
@@ -15,6 +16,15 @@ use Cake\Routing\Middleware\RoutingMiddleware;
  */
 class Application extends BaseApplication
 {
+    /**
+     * {@inheritDoc}
+     */
+    public function bootstrap()
+    {
+        // Call parent to load bootstrap from files.
+        parent::bootstrap();
+    }
+
     /**
      * Setup the middleware queue your application will use.
      *
@@ -32,7 +42,15 @@ class Application extends BaseApplication
             ->add(AssetMiddleware::class)
 
             // Add routing middleware.
-            ->add(new RoutingMiddleware($this));
+            // Routes collection cache enabled by default, to disable route caching
+            // pass null as cacheConfig, example: `new RoutingMiddleware($this)`
+            // you might want to disable this cache in case your routing is extremely simple
+            ->add(new RoutingMiddleware($this, '_cake_routes_'))
+
+            // Add csrf middleware.
+            ->add(new CsrfProtectionMiddleware([
+                'httpOnly' => true
+            ]));
 
         return $middlewareQueue;
     }
