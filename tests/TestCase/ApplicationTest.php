@@ -26,10 +26,9 @@ class ApplicationTest extends IntegrationTestCase
         $app->bootstrap();
         $plugins = $app->getPlugins();
 
-        $this->assertCount(3, $plugins);
+        $this->assertGreaterThan(3, count($plugins));
         $this->assertSame('Bake', $plugins->get('Bake')->getName());
         $this->assertSame('Migrations', $plugins->get('Migrations')->getName());
-        $this->assertSame('DebugKit', $plugins->get('DebugKit')->getName());
     }
 
     /**
@@ -37,7 +36,7 @@ class ApplicationTest extends IntegrationTestCase
      *
      * @return void
      */
-    public function testBootstrapPluginWitoutHalt()
+    public function testBootstrapPluginWithoutHalt()
     {
         $this->expectException(InvalidArgumentException::class);
 
