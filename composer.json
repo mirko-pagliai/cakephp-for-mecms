@@ -8,7 +8,6 @@
         "cakephp/cakephp": "^3.6",
         "cakephp/migrations": "^2.0.0",
         "cakephp/plugin-installer": "^1.0",
-        "josegonzalez/dotenv": "3.*",
         "mobiledetect/mobiledetectlib": "2.*",
         "eonasdan/bootstrap-datetimepicker": "4.*",
         "newerton/fancy-box": "dev-master",
@@ -17,9 +16,10 @@
         "mirko-pagliai/me-cms": "*"
     },
     "require-dev": {
-        "cakephp/bake": "^1.1",
+        "cakephp/bake": "^1.9.0",
         "cakephp/cakephp-codesniffer": "^3.0",
         "cakephp/debug_kit": "^3.2",
+        "josegonzalez/dotenv": "3.*",
         "psy/psysh": "@stable"
     },
     "repositories": [

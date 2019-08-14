@@ -81,6 +81,7 @@ return [
      */
     'Asset' => [
         'timestamp' => true,
+        // 'cacheTime' => '+1 year'
     ],
 
     /**
@@ -162,7 +163,7 @@ return [
      * - `skipLog` - array - List of exceptions to skip for logging. Exceptions that
      *   extend one of the listed exceptions will also be skipped for logging.
      *   E.g.:
-     *   `'skipLog' => ['Cake\Network\Exception\NotFoundException', 'Cake\Network\Exception\UnauthorizedException']`
+     *   `'skipLog' => ['Cake\Http\Exception\NotFoundException', 'Cake\Http\Exception\UnauthorizedException']`
      * - `extraFatalErrorMemory` - int - The number of megabytes to increase
      *   the memory limit by when a fatal error is encountered. This allows
      *   breathing room to complete logging or error handling.
@@ -320,7 +321,7 @@ return [
      */
     'Log' => [
         'debug' => [
-            'className' => 'MeCms\Log\Engine\SerializedLog',
+            'className' => \EntityFileLog\Log\Engine\EntityFileLog::class,
             'path' => LOGS,
             'file' => 'debug',
             'url' => env('LOG_DEBUG_URL', null),
@@ -328,7 +329,7 @@ return [
             'levels' => ['notice', 'info', 'debug'],
         ],
         'error' => [
-            'className' => 'MeCms\Log\Engine\SerializedLog',
+            'className' => \EntityFileLog\Log\Engine\EntityFileLog::class,
             'path' => LOGS,
             'file' => 'error',
             'url' => env('LOG_ERROR_URL', null),
