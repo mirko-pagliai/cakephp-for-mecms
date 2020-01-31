@@ -58,8 +58,8 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
-	"config": {
-		"component-dir": "vendor/components",
+    "config": {
+        "component-dir": "vendor/components",
         "sort-packages": true
-	}
+    }
 }

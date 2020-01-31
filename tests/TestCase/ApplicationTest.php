@@ -14,26 +14,22 @@ use InvalidArgumentException;
  */
 class ApplicationTest extends IntegrationTestCase
 {
-
     /**
      * testBootstrap
-     *
      * @return void
      */
     public function testBootstrap()
     {
         $app = new Application(dirname(dirname(__DIR__)) . '/config');
         $app->bootstrap();
-        $plugins = $app->getPlugins();
-
-        $this->assertGreaterThan(3, count($plugins));
-        $this->assertSame('Bake', $plugins->get('Bake')->getName());
-        $this->assertSame('Migrations', $plugins->get('Migrations')->getName());
+        $plugins = array_keys(iterator_to_array($app->getPlugins()));
+        $this->assertContains('Bake', $plugins);
+        $this->assertContains('MeCms', $plugins);
+        $this->assertContains('Migrations', $plugins);
     }
 
     /**
      * testBootstrapPluginWitoutHalt
-     *
      * @return void
      */
     public function testBootstrapPluginWithoutHalt()
@@ -53,7 +49,6 @@ class ApplicationTest extends IntegrationTestCase
 
     /**
      * testMiddleware
-     *
      * @return void
      */
     public function testMiddleware()
