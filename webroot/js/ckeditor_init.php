@@ -30,10 +30,10 @@ $(function () {
             /**
              * To use KCFinder, you have to comment out these lines and indicate the position of KCFinder
              */
-            filebrowserBrowseUrl: '<?= dirname(dirname($_SERVER['PHP_SELF'])) ?>/vendor/kcfinder/browse.php?type=files',
-            filebrowserImageBrowseUrl: '<?= dirname(dirname($_SERVER['PHP_SELF'])) ?>/vendor/kcfinder/browse.php?type=images',
-            filebrowserUploadUrl: '<?= dirname(dirname($_SERVER['PHP_SELF'])) ?>/vendor/kcfinder/upload.php?type=files',
-            filebrowserImageUploadUrl: '<?= dirname(dirname($_SERVER['PHP_SELF'])) ?>/vendor/kcfinder/upload.php?type=images',
+            filebrowserBrowseUrl: '<?= dirname($_SERVER['PHP_SELF'], 2) ?>/vendor/kcfinder/browse.php?type=files',
+            filebrowserImageBrowseUrl: '<?= dirname($_SERVER['PHP_SELF'], 2) ?>/vendor/kcfinder/browse.php?type=images',
+            filebrowserUploadUrl: '<?= dirname($_SERVER['PHP_SELF'], 2) ?>/vendor/kcfinder/upload.php?type=files',
+            filebrowserImageUploadUrl: '<?= dirname($_SERVER['PHP_SELF'], 2) ?>/vendor/kcfinder/upload.php?type=images',
         });
     });
 });

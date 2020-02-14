@@ -1,10 +1,13 @@
 <?php
+declare(strict_types=1);
+
 namespace App;
 
 use Cake\Core\Configure;
 use Cake\Core\Exception\MissingPluginException;
 use Cake\Error\Middleware\ErrorHandlerMiddleware;
 use Cake\Http\BaseApplication;
+use Cake\Http\MiddlewareQueue;
 use Cake\Routing\Middleware\AssetMiddleware;
 use Cake\Routing\Middleware\RoutingMiddleware;
 use MeCms\Plugin as MeCms;
@@ -18,7 +21,7 @@ class Application extends BaseApplication
      * Load all the application configuration and bootstrap logic
      * @return void
      */
-    public function bootstrap()
+    public function bootstrap(): void
     {
         parent::bootstrap();
 
@@ -32,12 +35,12 @@ class Application extends BaseApplication
 
     /**
      * Setup the middleware queue your application will use
-     * @param \Cake\Http\MiddlewareQueue $middlewareQueue The middleware queue to setup.
-     * @return \Cake\Http\MiddlewareQueue The updated middleware queue.
+     * @param \Cake\Http\MiddlewareQueue $middleware The middleware queue to setup
+     * @return \Cake\Http\MiddlewareQueue The updated middleware queue
      */
-    public function middleware($middlewareQueue)
+    public function middleware(MiddlewareQueue $middleware): MiddlewareQueue
     {
-        return $middlewareQueue
+        return $middleware
             // Catch any exceptions in the lower layers,
             // and make an error page/response
             ->add(new ErrorHandlerMiddleware(null, Configure::read('Error')))
@@ -57,7 +60,7 @@ class Application extends BaseApplication
     /**
      * @return void
      */
-    protected function bootstrapCli()
+    protected function bootstrapCli(): void
     {
         try {
             $this->addPlugin('Bake');

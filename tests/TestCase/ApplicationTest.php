@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace App\Test\TestCase;
 
 use App\Application;
@@ -22,10 +24,11 @@ class ApplicationTest extends IntegrationTestCase
     {
         $app = new Application(dirname(dirname(__DIR__)) . '/config');
         $app->bootstrap();
-        $plugins = array_keys(iterator_to_array($app->getPlugins()));
-        $this->assertContains('Bake', $plugins);
-        $this->assertContains('MeCms', $plugins);
-        $this->assertContains('Migrations', $plugins);
+        $plugins = $app->getPlugins();
+
+        $this->assertGreaterThan(0, count($plugins));
+        $this->assertSame('Bake', $plugins->get('Bake')->getName());
+        $this->assertSame('Migrations', $plugins->get('Migrations')->getName());
     }
 
     /**

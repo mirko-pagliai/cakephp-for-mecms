@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 use Assets\Network\Exception\AssetNotFoundException;
 use Cake\Cache\Engine\FileEngine;
@@ -22,7 +23,7 @@ return [
      * Development Mode:
      * true: Errors and warnings shown.
      */
-    'debug' => filter_var(env('DEBUG', true), FILTER_VALIDATE_BOOLEAN),
+    'debug' => filter_var(env('DEBUG', false), FILTER_VALIDATE_BOOLEAN),
 
     /**
      * Configure basic information about the application.
@@ -68,8 +69,8 @@ return [
         'jsBaseUrl' => 'js/',
         'paths' => [
             'plugins' => [ROOT . DS . 'plugins' . DS],
-            'templates' => [APP . 'Template' . DS],
-            'locales' => [APP . 'Locale' . DS],
+            'templates' => [ROOT . DS . 'templates' . DS],
+            'locales' => [RESOURCES . 'locales' . DS],
         ],
     ],
 
@@ -93,7 +94,7 @@ return [
      * enable timestamping regardless of debug value.
      */
     'Asset' => [
-        'timestamp' => true,
+        'timestamp' => 'force',
         // 'cacheTime' => '+1 year'
     ],
 

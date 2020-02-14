@@ -1,5 +1,6 @@
 *_old
 *.old.*
+.phpunit.result.cache
 backups/*
 composer.lock
 config/.env
