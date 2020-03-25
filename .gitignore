@@ -19,6 +19,7 @@ webroot/files
 webroot/fonts
 webroot/img/photos
 webroot/img/banners
+webroot/img/users
 webroot/me_cms
 webroot/me_tools
 webroot/vendor
