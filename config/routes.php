@@ -2,13 +2,14 @@
 declare(strict_types=1);
 
 use Cake\Http\Middleware\CsrfProtectionMiddleware;
-use Cake\Routing\RouteBuilder;
-use Cake\Routing\Router;
 use Cake\Routing\Route\DashedRoute;
+use Cake\Routing\RouteBuilder;
 
-Router::defaultRouteClass(DashedRoute::class);
+/** @var \Cake\Routing\RouteBuilder $routes */
+$routes->setRouteClass(DashedRoute::class);
 
-Router::scope('/', function (RouteBuilder $routes) {
-    $routes->registerMiddleware('csrf', new CsrfProtectionMiddleware(['httpOnly' => true]));
-    $routes->fallbacks(DashedRoute::class);
+$routes->scope('/', function (RouteBuilder $builder) {
+    $builder->registerMiddleware('csrf', new CsrfProtectionMiddleware(['httpOnly' => true]));
+    $builder->applyMiddleware('csrf');
+    $builder->fallbacks();
 });

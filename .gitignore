@@ -5,6 +5,7 @@ backups/*
 composer.lock
 config/.env
 config/app.php
+config/app_local.php
 config/banned_ip.php
 config/recaptcha.php
 backups/*

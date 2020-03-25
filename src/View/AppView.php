@@ -10,4 +10,11 @@ use Cake\View\View;
  */
 class AppView extends View
 {
+    /**
+     * Initialization hook method
+     * @return void
+     */
+    public function initialize(): void
+    {
+    }
 }
